@@ -1,11 +1,7 @@
-<h1> Work Index </h1>
-
-<p> This is an iteration loop that prints each work attribute</p>
-  <ul>
+ <ul>
     <% @works.each do |work|%>
       <li>Category: <%= work.category %> </li>
       <li>Title: <%= work.title %> </li>
-      <li>Creator: <%= work.creator %> </li>
       <li>Publication Year: <%= work.publication_year %></li>
       <li>Description: <%= work.description %></li>
       <br>
