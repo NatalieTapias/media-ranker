@@ -1,1 +1,12 @@
-<h1> index <h1>
+<h1> index </h1>
+
+<p> </p>
+  <ul>
+    <% @works.each do |work|%>
+      <li>Category: <%= work.category %> </li>
+      <li>Title: <%= work.title %> </li>
+      <li>Publication Year: <%= work.publication_year %></li>
+      <li>Description: <%= work.description %></li>
+      <br>
+    <% end %>
+  </ul>
