@@ -7,12 +7,6 @@ class UsersController < ApplicationController
   def show
     user_id = session[:user_id] 
     @user = User.find_by(id: user_id)
-    # username = params[:user][:username]
-    # @user = User.find_by(username: username)
-    # if @user.nil?
-    #   flash[:error] = "Could not find user with id: #{username}"
-    #   redirect_to users_path
-    # end
   end
 
   def login_form
@@ -28,9 +22,8 @@ class UsersController < ApplicationController
     else
       user = User.create(username: username)
       session[:user_id] = user.id
-      flash[:success] = "Successfully logged in as #{user.username}"
     end
-
+    flash[:success] = "Successfully logged in as #{user.username}"
     redirect_to root_path
   end
 
