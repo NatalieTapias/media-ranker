@@ -5,12 +5,12 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <header>
+    <header class="app-header__header">
     <h1>
     <a href="/">Media Ranker</a>
     <small>Ranking the Best of Everything</small>
@@ -20,14 +20,14 @@
           <li>View top media</li>
           <li>Add New Media</li>
           <li><%= link_to "View All Media", works_path %></li>
-          <li>View all Users</li>
+          <li><%= link_to "View all Users", users_path %></li>
         </ul>
         <ul class="nav app-header__user-nav-container">
           <% if session[:user_id] %>
-            <li class="btn btn-primary"> Logged in as <%= @current_user %> </li>
-            <li class="btn btn-primary" <%= link_to "Log out", logout_path, method: :post %> </li>
+            <li class="btn btn-primary">Logged in as <%= session[:id] %> </li>
+            <li class="btn btn-primary"><%= link_to "Log out", logout_path, method: :post%> </li>
           <% else %>
-          <li class="nav-item app-header__nav_item"><%= link_to "Log In", login_path %> </li>
+          <li class="btn btn-primary"><%= link_to "Log In", login_path %> </li>
           <% end %>
         </ul>
       </nav>

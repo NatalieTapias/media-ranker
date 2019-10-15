@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 
+
   def index
     @users = User.all
   end
@@ -28,7 +29,7 @@ class UsersController < ApplicationController
   end
 
   def current 
-    @current_user = User.find_by(username: session[:user_id])
+    
     
     if !@current_user
       flash[:failure] = "Could not find user: #{@current_user.username}"
@@ -39,11 +40,10 @@ class UsersController < ApplicationController
     end
   end
 
-
   def logout
     user_id = session[:user_id] 
     current_user = User.find_by(id: user_id)
-    user_id = current_user.id
+    
     if current_user 
       session[:user_id] = nil
       flash[:success] = "Successfully logged out "
@@ -52,5 +52,7 @@ class UsersController < ApplicationController
     end
     redirect_to root_path
   end
+
+
 
 end
