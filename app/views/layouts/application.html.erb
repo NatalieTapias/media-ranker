@@ -10,6 +10,18 @@
   </head>
 
   <body>
+    <header>
+      <nav>
+        <ul>
+          <li>View top media</li>
+          <li>Add New Media</li>
+          <li><%= link_to "View All Media", works_path %></li>
+          <li>View all Users</li>
+          <li> Log In</li>
+          <li> Log Out</li>
+        </ul>
+      </nav>
+    </header >
     <%= yield %>
   </body>
 </html>
