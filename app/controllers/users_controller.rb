@@ -40,6 +40,7 @@ class UsersController < ApplicationController
     if !@current_user
       flash[:failure] = "Could not find user: #{@current_user.username}"
       redirect_to users_path
+      return
     else
       flash[:success] = "Logged in as #{@current_user.username}"
     end
@@ -47,9 +48,10 @@ class UsersController < ApplicationController
 
 
   def logout
-    @current_user = User.find_by(username: params[:user[:username]])
-    user_id = @current_user.id
-    if user 
+    user_id = session[:user_id] 
+    current_user = User.find_by(id: user_id)
+    user_id = current_user.id
+    if current_user 
       session[:user_id] = nil
       flash[:success] = "Successfully logged out "
     else

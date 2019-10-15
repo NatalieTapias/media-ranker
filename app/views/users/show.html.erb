@@ -1,2 +1,8 @@
 <h1>Show.html.erb</h1>
-<p> currently logged in as <%= User.find_by(id: session[:user_id]).username  %> </p>
+<ul>
+<% if session[:user_id] %>
+<li> currently logged in as <%= @current_user %> </li>
+<% else %>
+<li> not currently logged in </li>
+<% end %>
+
