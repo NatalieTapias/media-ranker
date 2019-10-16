@@ -1,21 +1,27 @@
 <h1>Homepages.html.erb</h1>
   
-<section>
-  <h2>spotlight section for the top media overall</h2>
-  <%= render partial: "list_works", locals: { works: @works} %>
+
+<section class="spotlight"> 
+  <h2 class="spotlight__header">Media Spotlight: link to spotlight title</h2>
+  <p class="spotlight__description">Here's where the votes go - Here's where the description goes.</p>
 </section>
 
-<section>
-  <h2>Books</h2>
-   <%= render partial: "list_works", locals: { works: @books} %>
-</section>
+<hr class="root__hr">
 
-<section>
-  <h2>Albums</h2>
-  <%= render partial: "list_works", locals: { works: @albums} %>
-</section>
 
-<section>
-  <h2>Movies</h2>
-   <%= render partial: "list_works", locals: { works: @movies} %>
-</section>
+<section class="top-ten__container"
+  <section class="top-ten__list-container">
+    <h2 class="top-ten__header">Books</h2>
+    <%= render partial: "list_works", locals: { works: @books} %>
+  </section>
+
+  <section class="top-ten__list-container">
+    <h2 class="top-ten__header">Albums</h2>
+    <%= render partial: "list_works", locals: { works: @albums} %>
+  </section>
+
+  <section class="top-ten__list-container">
+    <h2 class="top-ten__header">Movies</h2>
+    <%= render partial: "list_works", locals: { works: @movies} %>
+  </section>
+  </section>

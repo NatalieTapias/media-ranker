@@ -1,10 +1,14 @@
 
-<ul>
+<ul class="list-group top-ten__list">
     <% works.each do |work| %>
-      <li>Category: <%= work.category %></li>
-      <li>Title: <%= work.title %></li>
-      <li>Creator: <%= work.creator %></li>
-      <li>Publication Year: <%= work.publication_year %></li>
-      <li>Description: <%= work.creator %></li>
+      <li class="list-group-item">
+        <h4 class="top-ten__header">
+          <%= work.title %>
+          <small class="top-ten__creator">by <%= work.creator %></small>
+        </h4>
+        <p>
+          (# of Votes Go Here) votes
+        </p>
+      </li>
     <% end %>
   </ul>

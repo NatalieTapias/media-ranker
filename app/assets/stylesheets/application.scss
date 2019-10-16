@@ -82,12 +82,9 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   justify-content: space-between;
 }
 
-
 .app-header__nav_item {
   margin-top: 1rem;
 }
-
-
 
 .btn {
   display: inline-block;
@@ -115,6 +112,11 @@ h1 {
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   font-weight: bold;
+}
+
+.root__hr {
+  margin: 0px auto 3rem auto;
+  color: #EEEEEE;
 }
 
 .app-header__header h1 {
@@ -145,6 +147,10 @@ h1, .h1 {
   font-size: 2.5rem;
 }
 
+a, h2, h3 {
+  color: #26A69A;
+}
+
 .btn {
   display: inline-block;
   font-weight: 400;
@@ -162,8 +168,6 @@ h1, .h1 {
   border-radius: 0.25rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
-
-
 
 small, .small {
   font-size: 80%;
@@ -200,3 +204,54 @@ li {
   background-color: #6c757d;
   border-color: #6c757d;
 }
+
+.top-ten__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 2em;
+}
+
+.top-ten__list-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 2em;
+}
+
+.top-ten__header {
+  color: #26A69A;
+  border-bottom: 2px solid;
+  border-bottom-color: #B2DFDB;
+}
+
+.list-group {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.top-ten__list {
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+
+
+.list-group-item {
+  position: relative;
+  display: block;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: -1px;
+  background-color: #fff;
+  border: 1px solid rgba(0,0,0,0.125);
+}
+
+.list-group-item {
+  border: none;
+}
+
+.top-ten__creator {
+  color: slategrey;
+}
+
