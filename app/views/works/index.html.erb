@@ -4,7 +4,7 @@
   <ul>
     <% @works.each do |work|%>
       <li>Category: <%= work.category %> </li>
-      <li>Title: <%= work.title %> </li>
+      <li>Title: <%= link_to "#{work.title}", work_path(work.id) %> </li>
       <li>Creator: <%= work.creator %> </li>
       <li>Publication Year: <%= work.publication_year %></li>
       <li>Description: <%= work.description %></li>

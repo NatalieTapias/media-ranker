@@ -48,14 +48,15 @@ class WorksController < ApplicationController
     end
 
     def find_work
-      work = Work.find_by(id: params[:id])
-      return work
+      @work = Work.find_by(id: params[:id])
+      return @work
     end
 
     def if_work_missing
       if @work.nil?
         flash[:failure] = "Media edit failed to save"
         redirect_to works_path
+        return
       end
     end
   end
