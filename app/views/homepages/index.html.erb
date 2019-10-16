@@ -1,59 +1,21 @@
-<h1>Homepages#index</h1>
+<h1>Homepages.html.erb</h1>
   
 <section>
-  <p>spotlight section for the top media overall</p>
-  <ul>
-    <% @top_ten.each do |work| %>
-      <li>Category: <%= work.category %></li>
-      <li>Title: <%= work.title %></li>
-      <li>Creator: <%= work.creator %></li>
-      <li>Publication Year: <%= work.publication_year %></li>
-      <li>Description: <%= work.creator %></li>
-    <% end %>
-  </ul>
+  <h2>spotlight section for the top media overall</h2>
+  <%= render partial: "list_works", locals: { works: @works} %>
 </section>
 
 <section>
-  <p>Books</p>
-
-  <% @books.each do |work| %>
-    <ul>
-      <li>Category: <%= work.category %></li>
-      <li>Title: <%= work.title %></li>
-      <li>Creator: <%= work.creator %></li>
-      <li>Publication Year: <%= work.publication_year %></li>
-      <li>Description: <%= work.creator %></li>
-    </ul>
-  <% end %>
- 
+  <h2>Books</h2>
+   <%= render partial: "list_works", locals: { works: @books} %>
 </section>
 
 <section>
-  <p>Albums</p>
-
-  <% @albums.each do |work| %>
-    <ul>
-      <li>Category: <%= work.category %></li>
-      <li>Title: <%= work.title %></li>
-      <li>Creator: <%= work.creator %></li>
-      <li>Publication Year: <%= work.publication_year %></li>
-      <li>Description: <%= work.creator %></li>
-    </ul>
-  <% end %>
- 
+  <h2>Albums</h2>
+  <%= render partial: "list_works", locals: { works: @albums} %>
 </section>
 
 <section>
-  <p>Movies</p>
-
-  <% @movies.each do |work| %>
-  <ul>
-    <li>Category: <%= work.category %></li>
-    <li>Title: <%= work.title %></li>
-    <li>Creator: <%= work.creator %></li>
-    <li>Publication Year: <%= work.publication_year %></li>
-    <li>Description: <%= work.creator %></li>
-  </ul>
-  <% end %>
- 
+  <h2>Movies</h2>
+   <%= render partial: "list_works", locals: { works: @movies} %>
 </section>
