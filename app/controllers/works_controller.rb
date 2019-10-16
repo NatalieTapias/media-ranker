@@ -24,21 +24,22 @@ class WorksController < ApplicationController
   def edit ; end
 
   def update
-    work.update_attributes(work_params)
-    # add some flash success message here
-    redirect_to work_path(work)
+    @work.update_attributes(work_params)
+    
+    flash[:success] = "Successfully updated the #{@work.category} entitled #{@work.title}."
+    redirect_to work_path(@work)
     return
   end
 
   def destroy
-    if work.nil?
+    if @work.nil?
       flash[:error] = "Could not find work with id: #{params[:id]}"
       redirect_to root_path
       return
     end
     
-    work.destroy
-    # confirms what I've done
+    @work.destroy
+    flash[:success] = "Successfully destroyed the #{@work.category} entitled #{@work.title}."
     redirect_to root_path
     return
   end
