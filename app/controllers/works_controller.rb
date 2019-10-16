@@ -38,15 +38,13 @@ class WorksController < ApplicationController
 
     if work.nil?
       flash[:error] = "Could not find work with id: #{params[:id]}"
-        redirect_to root_path
-            return
+      redirect_to root_path
+      return
     end
 
     work.update_attributes(work_params)
-
     # add some flash success message here
-
-    redirect_to works_path(work)
+    redirect_to work_path(work)
   end
 
   def destroy

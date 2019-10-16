@@ -7,3 +7,7 @@
   <li>Publication Year: <%= @work.publication_year %></li>
   <li>Description: <%= @work.creator %></li>
 </ul>
+
+<section>
+  <%= link_to "Edit #{@work.title}", edit_work_path(@work)%>
+</section>
