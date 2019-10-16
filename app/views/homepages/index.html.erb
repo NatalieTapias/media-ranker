@@ -4,26 +4,56 @@
   <p>spotlight section for the top media overall</p>
   <ul>
     <% @top_ten.each do |work| %>
-    <li>Category: <%= work.category %></li>
-    <li>Title: <%= work.title %></li>
-    <li>Creator: <%= work.creator %></li>
-    <li>Publication Year: <%= work.publication_year %></li>
-    <li>Description: <%= work.creator %></li>
+      <li>Category: <%= work.category %></li>
+      <li>Title: <%= work.title %></li>
+      <li>Creator: <%= work.creator %></li>
+      <li>Publication Year: <%= work.publication_year %></li>
+      <li>Description: <%= work.creator %></li>
     <% end %>
   </ul>
 </section>
 
 <section>
- <p>list of the media for each category</p>
-<ul>
-  <% array = Work.where(category: "album")  %>
-  <% array.each do |work| %>
+  <p>Books</p>
+
+  <% @books.each do |work| %>
+    <ul>
+      <li>Category: <%= work.category %></li>
+      <li>Title: <%= work.title %></li>
+      <li>Creator: <%= work.creator %></li>
+      <li>Publication Year: <%= work.publication_year %></li>
+      <li>Description: <%= work.creator %></li>
+    </ul>
+  <% end %>
+ 
+</section>
+
+<section>
+  <p>Albums</p>
+
+  <% @albums.each do |work| %>
+    <ul>
+      <li>Category: <%= work.category %></li>
+      <li>Title: <%= work.title %></li>
+      <li>Creator: <%= work.creator %></li>
+      <li>Publication Year: <%= work.publication_year %></li>
+      <li>Description: <%= work.creator %></li>
+    </ul>
+  <% end %>
+ 
+</section>
+
+<section>
+  <p>Movies</p>
+
+  <% @movies.each do |work| %>
+  <ul>
     <li>Category: <%= work.category %></li>
     <li>Title: <%= work.title %></li>
     <li>Creator: <%= work.creator %></li>
     <li>Publication Year: <%= work.publication_year %></li>
     <li>Description: <%= work.creator %></li>
-<br>
+  </ul>
   <% end %>
- </ul>
+ 
 </section>
