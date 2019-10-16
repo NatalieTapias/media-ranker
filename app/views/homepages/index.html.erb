@@ -9,18 +9,18 @@
 <hr class="root__hr">
 
 
-<section class="top-ten__container"
-  <section class="top-ten__list-container">
+<section class="top-ten__container">
+  <section>
     <h2 class="top-ten__header">Books</h2>
     <%= render partial: "list_works", locals: { works: @books} %>
   </section>
 
-  <section class="top-ten__list-container">
+  <section>
     <h2 class="top-ten__header">Albums</h2>
     <%= render partial: "list_works", locals: { works: @albums} %>
   </section>
 
-  <section class="top-ten__list-container">
+  <section>
     <h2 class="top-ten__header">Movies</h2>
     <%= render partial: "list_works", locals: { works: @movies} %>
   </section>
