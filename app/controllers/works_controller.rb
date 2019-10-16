@@ -1,16 +1,13 @@
 class WorksController < ApplicationController
+
+  before_action :find_work, only: [:show, :edit, :update, :destroy]
+  before_action :if_work_missing, only: [:edit, :update, :show]
+
   def index
     @works = Work.all
   end
   
-  def show
-    work_id = params[:id].to_i
-    @work = Work.find_by(id: work_id)
-    if @work.nil?
-      flash[:error] = "Could not find work with id: #{params[:id]}"
-      redirect_to works_path
-    end
-  end
+  def show ; end
   
   def new
     @work = Work.new
@@ -19,37 +16,20 @@ class WorksController < ApplicationController
   def create
     work = Work.new(work_params)
     work.save
-    
     redirect_to work_path(work)
+    return
   end
 
-  def edit 
-    work_id = params[:id]
-    @work = Work.find_by(id: work_id)
+  def edit ; end
 
-    if @work.nil?
-      flash[:failure] = "Media edit failed to save"
-      redirect_to works_path
-    end
-  end
-  
-  def update 
-    work = Work.find_by(id: params[:id])
-
-    if work.nil?
-      flash[:error] = "Could not find work with id: #{params[:id]}"
-      redirect_to root_path
-      return
-    end
-
+  def update
     work.update_attributes(work_params)
     # add some flash success message here
     redirect_to work_path(work)
+    return
   end
 
   def destroy
-    work = Work.find_by(id: params[:id])
-
     if work.nil?
       flash[:error] = "Could not find work with id: #{params[:id]}"
       redirect_to root_path
@@ -59,12 +39,24 @@ class WorksController < ApplicationController
     work.destroy
     # confirms what I've done
     redirect_to root_path
+    return
   end
 
   private
+    def work_params
+      return params.require(:work).permit(:title, :description, :creator, :publication_year, :category)
+    end
 
-  def work_params
-    return params.require(:work).permit(:title, :description, :creator, :publication_year, :category)
+    def find_work
+      work = Work.find_by(id: params[:id])
+      return work
+    end
+
+    def if_work_missing
+      if @work.nil?
+        flash[:failure] = "Media edit failed to save"
+        redirect_to works_path
+      end
+    end
   end
 
-end
