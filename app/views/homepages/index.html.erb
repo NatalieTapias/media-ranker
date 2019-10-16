@@ -2,6 +2,15 @@
   
 <section>
   <p>spotlight section for the top media overall</p>
+  <ul>
+    <% @top_ten.each do |work| %>
+    <li>Category: <%= work.category %></li>
+    <li>Title: <%= work.title %></li>
+    <li>Creator: <%= work.creator %></li>
+    <li>Publication Year: <%= work.publication_year %></li>
+    <li>Description: <%= work.creator %></li>
+    <% end %>
+  </ul>
 </section>
 
 <section>

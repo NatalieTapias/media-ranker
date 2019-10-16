@@ -16,50 +16,48 @@ class WorksController < ApplicationController
     @work = Work.new
   end
   
-  # def create
-  #   task = Task.new(task_params)
-  #   task.save
+  def create
+    work = Task.new(work_params)
+    work.save
     
-  #   redirect_to tasks_path
-  # end
+    redirect_to tasks_path
+  end
+
+  def edit 
+    work_id = work_params[:id]
+    @work = Work.find_by(id: work_id)
+
+    if @work.nil?
+      flash[:failure] = "Media edit failed to save"
+      redirect_to works_path
+    end
+  end
   
-  # def edit
-  #   task_id = params[:id].to_i
-  #   @task = Task.find_by(id:task_id)
-  #   if @task.nil?
-  #     flash[:error] = "Could not find task with id: #{task_id}"
-  #     redirect_to tasks_path
-  #   end
-  # end
-  
-  # def update
-  #   task_id = params[:id].to_i
-  #   task = Task.find_by(id:task_id)
-  #   if task.nil?
-  #     flash[:error] = "Could not find task with id: #{task_id}"
-  #     redirect_to root_path
-  #     return
-  #   end
-    
-  #   task_params = params[:task]
-  #   task.name = task_params[:name]
-  #   task.description = task_params[:description]
-  #   task.save
-    
-  #   redirect_to task_path(task)
-  # end
-  
-  # def destroy
-  #   task_id = params[:id]
-  #   @task = Task.find_by(id: task_id)
-    
-  #   if @task.nil?
-  #     flash[:error] = "Error, could not delete task."
-  #     redirect_to root_path
-  #     return
-  #   end
-  #   @task.destroy
-  #   redirect_to root_path
-  # end
-  
+def update 
+  work = Work.find_by(id: work_params[:id])
+
+  if work.nil?
+    flash[:error] = "Could not find work with id: #{work_params[:id]}"
+      redirect_to root_path
+          return
+  end
+  work.title = work_params[:title]
+  work.description = work_params[:description]
+  work.creator = work_params[:creator]
+  work.creator = work_params[:publication_year]
+  work.save
+
+  # add some flash success message here
+
+  redirect_to works_path(work)
+end
+
+def destroy
+end
+
+private
+def work_params
+  return params.require(:work).permit(:title, :description, :id, :creator, :publication_year)
+end
+
 end
