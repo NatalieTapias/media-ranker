@@ -1,11 +1,10 @@
 <h2> new work </h2>
 
-
 <%= form_for @work do |f| %>
   Title: <%= f.text_field :title %><br />
-  Category: <br />
+  Category:  <%= f.select :category, [['movie'], ['album'], ['book']] %> 
   Creator:<%= f.text_field :creator %><br />
-  Publication Year <%= f.text_field :publication_year %><br />
+  Publication Year <%= f.text_field :publication_year, type: :number %><br />
   Description : <%= f.text_area :description %><br />
   <%= f.submit action_name %>
 <% end %>
