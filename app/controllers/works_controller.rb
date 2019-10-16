@@ -48,6 +48,17 @@ class WorksController < ApplicationController
   end
 
   def destroy
+    work = Work.find_by(id: params[:id])
+
+    if work.nil?
+      flash[:error] = "Could not find work with id: #{params[:id]}"
+      redirect_to root_path
+      return
+    end
+    
+    work.destroy
+    # confirms what I've done
+    redirect_to root_path
   end
 
   private

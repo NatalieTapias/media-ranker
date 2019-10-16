@@ -10,4 +10,5 @@
 
 <section>
   <%= link_to "Edit #{@work.title}", edit_work_path(@work)%>
+  <%= link_to "Delete #{@work.title}", @work, method: :delete, data: { confirm: "Are you sure you want to delete #{@work.title}?"} %>
 </section>
