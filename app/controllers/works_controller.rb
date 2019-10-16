@@ -12,9 +12,9 @@ class WorksController < ApplicationController
     end
   end
   
-  # def new
-  #   @task = Task.new
-  # end
+  def new
+    @work = Work.new
+  end
   
   # def create
   #   task = Task.new(task_params)
