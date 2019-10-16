@@ -16,6 +16,7 @@ class WorksController < ApplicationController
   def create
     work = Work.new(work_params)
     work.save
+    flash[:success] = "Work added successfully."
     redirect_to work_path(work)
     return
   end

@@ -31,12 +31,18 @@
           <li class="btn btn-primary"><%= link_to "Log In", login_path %> </li>
           <% end %>
         </ul>
-
       </nav>
     </header >
 
-    <section>
+    <section class="flash">
+    <% flash.each do |name, message| %>
+        <div class="<%= name %>"> <%= message %></div>
+      <% end %>
     </section>
-    <%= yield %>
+
+    <section>
+      <%= yield %>
+    </section>
+
   </body>
 </html>
