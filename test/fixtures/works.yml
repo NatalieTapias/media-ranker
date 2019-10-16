@@ -1,0 +1,24 @@
+book:
+  id: 1
+  title: Favorite Book
+  category: book
+movie_one:
+  id: 2
+  title: Titanic
+  category: movie
+movie_two:
+  id: 3
+  title: Jurassic Park
+  category: movie
+album_one:
+  id: 4
+  title: Hocus Pocus Soundrack
+  category: album
+album_two:
+  id: 5
+  title: The White Album
+  category: album
+album_three:
+  id: 6
+  title: Living La Vida Loca
+  category: album
