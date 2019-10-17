@@ -255,3 +255,6 @@ li {
   color: slategrey;
 }
 
+.btn:not(:disabled):not(.disabled) {
+  cursor: pointer;
+}
