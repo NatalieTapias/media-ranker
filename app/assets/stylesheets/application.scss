@@ -277,3 +277,10 @@ li a {
 .btn:not(:disabled):not(.disabled) {
   cursor: pointer;
 }
+
+.btn-danger a {
+  color: white;
+}
+.btn-primary a {
+  color: white;
+}
