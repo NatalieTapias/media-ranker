@@ -1,16 +1,31 @@
-<h1> Work Index </h1>
+<h2> List of Works </h2>
 
-<p> This is an iteration loop that prints each work attribute</p>
-  <ul>
-    <% @works.each do |work|%>
-      <li>Category: <%= work.category %> </li>
-      <li>Title: <%= link_to "#{work.title}", work_path(work.id) %> </li>
-      <li>Creator: <%= work.creator %> </li>
-      <li>Publication Year: <%= work.publication_year %></li>
-      <li>Description: <%= work.description %></li>
-      <br>
-    <% end %>
-  </ul>
+<section class="media-table">
+  <h4>Albums</h4>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Votes</th>
+        <th>Title<th>
+        <th>Created By<th>
+        <th>Published<th>
+        <th>Upvote<th>
+      </tr>
+    </tead>
+    <tbody>
+      <% @works.each do |work| %>
+      <tr> 
+        <td>#votes<td>
+        <td><%= work.title %></td>
+        <td><%= work.creator %></td>
+        <td><%= work.publication_year %></td>
+        <td><%= link_to "Upvote" %></td>
+      <tr>
+      <% end %>
+    </tbody>
+  </table>
+</section>
+
 
 <%= link_to "Add a New Work", new_work_path%>
 <%= link_to "View Top Media", root_path %>
