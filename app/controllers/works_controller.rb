@@ -5,6 +5,10 @@ class WorksController < ApplicationController
 
   def index
     @works = Work.all
+   
+    @movies = Work.all_movies
+    @albums = Work.all_albums
+    @books = Work.all_books
   end
   
   def show ; end
