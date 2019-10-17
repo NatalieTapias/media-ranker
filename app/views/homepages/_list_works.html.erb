@@ -3,7 +3,7 @@
     <% works.each do |work| %>
       <li class="list-group-item">
         <h4 class="top-ten__header">
-          <%= work.title %>
+          <%= link_to "#{work.title}", work_path(work) %>
           <small class="top-ten__creator">by <%= work.creator %></small>
         </h4>
         <p>
