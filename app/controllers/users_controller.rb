@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
 
-
   def index
     @users = User.all
   end
@@ -29,8 +28,6 @@ class UsersController < ApplicationController
   end
 
   def current 
-    
-    
     if !@current_user
       flash[:failure] = "Could not find user: #{@current_user.username}"
       redirect_to users_path
@@ -52,7 +49,4 @@ class UsersController < ApplicationController
     end
     redirect_to root_path
   end
-
-
-
 end

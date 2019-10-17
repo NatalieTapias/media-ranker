@@ -1,18 +1,28 @@
-<h1><%= @work.title %></h1>
-
-<ul>
-  <li>Category: <%= @work.category %></li>
-  <li>Title: <%= @work.title %></li>
-  <li>Creator: <%= @work.creator %></li>
-  <li>Publication Year: <%= @work.publication_year %></li>
-  <li>Description: <%= @work.creator %></li>
-</ul>
+<h3><%= @work.title %></h3>
+<section>
+  <p>Creator: <%= @work.creator %></p>
+  <p>Published: <%= @work.publication_year %></p>
+  <p>Description: <%= @work.description %></p>
+</section>
 
 
-<%# buttons %>
+
 <section>
   <button class="btn btn-primary"><%= link_to "Back to Media Ranks", root_path %></button>
   <button class="btn btn-primary"><%= link_to "Edit", edit_work_path(@work)%></button>
   <button class="btn btn-primary"><%= link_to "Upvote needs a path"%></button>
-  <button class="btn btn-danger"><%= link_to "Delete #{@work.title}", @work, method: :delete, data: { confirm: "Are you sure you want to delete #{@work.title}?"} %></button>
+  <button class="btn btn-danger"><%= link_to "Delete", @work, method: :delete, data: { confirm: "Are you sure you want to delete #{@work.title}?"} %></button>
+</section>
+
+<section class="works-votes__container">
+  <h3 class="works-votes__header"> This is where we put in how many votes for <%= @work.category %>.</h3>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+
+  </table>
 </section>

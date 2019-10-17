@@ -17,7 +17,9 @@
 /* Import scss content */
 @import "**/*";
 
-
+main {
+  padding: 2rem;
+}
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -283,4 +285,12 @@ li a {
 }
 .btn-primary a {
   color: white;
+}
+
+.works-votes__container {
+  margin-top: 2rem;
+}
+
+.works-votes__header {
+  color: black;
 }
