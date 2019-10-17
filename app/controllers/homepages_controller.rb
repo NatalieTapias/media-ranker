@@ -6,6 +6,7 @@ class HomepagesController < ApplicationController
     @movies = Work.all_movies
     @albums = Work.all_albums
     @books = Work.all_books
+    @current_user = current_user
   end
 
 end
