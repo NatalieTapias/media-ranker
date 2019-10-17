@@ -1,9 +1,4 @@
 <h1>Show.html.erb</h1>
-<ul>
-<% if session[:user_id] %>
-<li> currently logged in as <%= @current_user %> </li>
-<% else %>
-<li> not currently logged in </li>
-<% end %>
-
-<%= link_to "Back to Media List", root_path %>
+<p>this will be a list of votes</p>
+<div class="btn btn-secondary"><%= link_to "Back to List of Users", users_path %></div>
+<div class="btn btn-primary"><%= link_to "Back to Media List", root_path%></div>
