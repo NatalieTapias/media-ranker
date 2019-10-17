@@ -14,7 +14,6 @@ class WorksController < ApplicationController
   def show ; end
   
   def new
-    @current_user = current_user
     @work = Work.new
   end
   
