@@ -2,10 +2,10 @@ class WorksController < ApplicationController
 
   before_action :find_work, only: [:show, :edit, :update, :destroy]
   before_action :if_work_missing, only: [:edit, :update, :show]
+  before_action :current_user
 
   def index
     @works = Work.all
-   
     @movies = Work.all_movies
     @albums = Work.all_albums
     @books = Work.all_books
@@ -14,6 +14,7 @@ class WorksController < ApplicationController
   def show ; end
   
   def new
+    @current_user = current_user
     @work = Work.new
   end
   
