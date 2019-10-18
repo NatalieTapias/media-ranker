@@ -1,0 +1,6 @@
+vote_on_work:
+  user_id: 1
+  work_id: 1
+vote_second_on_work:
+  user_id: 2
+  work_id: 1
