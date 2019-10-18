@@ -6,11 +6,16 @@ class VotesController < ApplicationController
   end
 
   def new
-   @vote = Vote.new
+    @vote = Vote.new
   end
 
   def create
-    vote = Vote.new(user_id: , work_id: )
+    work_id = params[:work_id]
+    user_id = session[:user_id]
+    vote = Vote.create(user_id: user_id, work_id: work_id)
+    flash[:success] = "Vote added successfully."
+    redirect_to works_path
+    return
   end
 
   def show
