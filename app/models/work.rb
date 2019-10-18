@@ -1,7 +1,5 @@
 class Work < ApplicationRecord
   has_many :votes
-  # has many users 
-  # has up to one vote per user
 
   def self.top_ten
     return Work.order("RANDOM()").limit(10)
