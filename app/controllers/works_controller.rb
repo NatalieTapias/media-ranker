@@ -1,8 +1,9 @@
 class WorksController < ApplicationController
-
+  
+  before_action :current_user
   before_action :find_work, only: [:show, :edit, :update, :destroy]
   before_action :if_work_missing, only: [:edit, :update, :show]
-  before_action :current_user
+  
 
   def index
     @works = Work.all
