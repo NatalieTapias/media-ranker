@@ -1,9 +1,10 @@
 <h2><%= verb %> <%= @work.category %></h2>
 
 <%= form_for @work do |f| %>
+
   <div class="form-group">
-    <label>Category:</lable>  
-      <%= f.select :category, [['movie'], ['album'], ['book']], class:"form-control" %>
+    <label>Category:</label>  
+      <%= f.select :category,[['movie'], ['album'], ['book']], class:"form-control"%>
   </div>
 
   <div class="form-group">
