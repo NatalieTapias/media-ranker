@@ -8,7 +8,7 @@ class Vote < ApplicationRecord
   # end
 
   def self.top_ten
-    return Vote.order_by(work_id).limit(10)
+    return Vote.order(:work_id).limit(10)
   end
 
   # def number_of_votes(work)

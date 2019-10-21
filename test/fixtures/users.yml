@@ -7,3 +7,9 @@ user_two:
 user_three:
   id: 3
   username: maria
+user_four:
+  id: 4
+  username: arnold
+user_five:
+  id: 5
+  username: harry
