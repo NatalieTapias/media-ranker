@@ -1,9 +1,7 @@
-<h1>Homepages.html.erb</h1>
-  
-
 <section class="spotlight"> 
-  <h2 class="spotlight__header">Media Spotlight: link to spotlight title</h2>
-  <p class="spotlight__description">Here's where the votes go - Here's where the description goes.</p>
+  <h2 class="spotlight__header">Media Spotlight: 
+    <%= link_to "#{Work.media_spotlight.title} by #{Work.media_spotlight.creator}"%></h2>
+  <p class="spotlight__description"> <%= Work.media_spotlight.votes.count %> votes - <%= Work.media_spotlight.description %> </p>
 </section>
 
 <hr class="root__hr">

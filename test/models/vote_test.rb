@@ -1,9 +1,9 @@
 require "test_helper"
 
 describe Vote do
-  let (:vote_on_work) = votes(:vote_on_work)
+  let(:vote_on_work) = votes(:vote_on_work)
 
-  let (:vote_second_on_work) = votes(:vote_second_on_work)
+  let(:vote_second_on_work) = votes(:vote_second_on_work)
   
   describe "relations" do
     it "should have one user" do
@@ -20,6 +20,7 @@ describe Vote do
 
   describe "validations" do
     it "should validate presence of work_id" do
+      # expect(vote_on_work.user_id).must_equal vote_on_work.user_id
     end
 
     it "should validate presence of user_id" do

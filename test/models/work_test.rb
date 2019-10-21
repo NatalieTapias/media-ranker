@@ -12,7 +12,6 @@ describe Work do
     end
 
     it "should return items in vote_count, desc order " do
-      # put in a vote count on the fixture
       # check for correct order
     end
   end
