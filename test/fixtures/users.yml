@@ -1,3 +1,9 @@
-user:
+user_one:
+  id: 1
   username: natalie
-  
+user_two:
+  id: 2
+  username: tim
+user_three:
+  id: 3
+  username: maria
