@@ -13,8 +13,14 @@ class VotesController < ApplicationController
     work_id = params[:work_id]
     user_id = session[:user_id]
 
-    vote = Vote.new(user_id: user_id, work_id: work_id)
-    vote.save
+    if !session[:user_id]
+      flash[:failure] = "Please Log In to Vote."
+      redirect_to works_path
+      return 
+    end
+
+    vote = Vote.create(user_id: user_id, work_id: work_id)
+  
     flash[:success] = "Vote added successfully."
     redirect_to works_path
     return

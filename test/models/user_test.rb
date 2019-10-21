@@ -3,6 +3,7 @@ require "test_helper"
 describe User do
   describe "relations" do
     it "should have a relation between a user and a vote" do
+      
 
     end
   end
