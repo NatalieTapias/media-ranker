@@ -2,7 +2,7 @@ class Vote < ApplicationRecord
   has_one :work
   has_one :user
 
-  validates_uniqueness_of :user_id
+  # validates_uniqueness_of :user_id
  
 
   def self.number_of_votes(work)

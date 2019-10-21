@@ -5,7 +5,6 @@ class Work < ApplicationRecord
     # return Work.order("RANDOM()").limit(10)
     # find number of votes per work
     # sort works in descending order by vote 
-
   end
 
   def self.all_albums
