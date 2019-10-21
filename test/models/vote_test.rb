@@ -1,27 +1,35 @@
 require "test_helper"
 
 describe Vote do
-  let(:vote_on_work) = votes(:vote_on_work)
-
-  let(:vote_second_on_work) = votes(:vote_second_on_work)
   
   describe "relations" do
-    it "should have one user" do
-      expect(vote_on_work.user_id).must_equal 1
-      expect(vote_second_on_work.user_id).must_equal 1
+    
+    it "has one user" do
+      vote_on_work = votes(:vote_on_work)
+      vote_second_on_work = votes(:vote_second_on_work)
+
+      expect(User.find_by(id: vote_on_work.user_id)).must_be_instance_of User
+      expect(User.find_by(id: vote_second_on_work.user_id)).must_be_instance_of User
+     
     end
 
-   it "should have one work" do
-    expect(vote_on_work.work_id).must equal 1
-    expect(vote_second_on_work.work_id).must equal 1
-   end
+    it "a vote should have one work" do
+      vote_on_work = votes(:vote_on_work)
+      vote_second_on_work = votes(:vote_second_on_work)
 
+
+      expect(Work.find_by(id: vote_on_work.work_id)).must_be_instance_of Work
+      expect(Work.find_by(id: vote_second_on_work.work_id)).must_be_instance_of Work
+    end
   end
 
+  
   describe "validations" do
-    it "should validate presence of work_id" do
-      # expect(vote_on_work.user_id).must_equal vote_on_work.user_id
-    end
+    # vote_on_work = votes(:vote_on_work)
+    # vote_second_on_work = votes(:vote_second_on_work)
+    # it "should validate presence of work_id" do
+    #   expect(vote_on_work.user_id).must_equal votes(:vote_on_work).user_id
+  
 
     it "should validate presence of user_id" do
     end
@@ -32,4 +40,5 @@ describe Vote do
 
   describe "custom methods" do
   end
+
 end
