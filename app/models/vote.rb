@@ -7,8 +7,20 @@ class Vote < ApplicationRecord
   #   return Vote.where(work_id: work_id).count
   # end
 
-  def self.top_ten
+  def self.order_by_work
     return Vote.order(:work_id).limit(10)
+  end
+
+  def self.tally_up_works
+    hash = {}
+    Vote.each do |vote|
+      if hash[vote.work_id]
+        hash[vote.work_id] += 1
+      else
+        hash[vote.work_id] = 1
+      end
+    end
+    return hash
   end
 
   # def number_of_votes(work)

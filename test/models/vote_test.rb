@@ -37,7 +37,7 @@ describe Vote do
       end
 
       
-      expect(Vote.top_ten.length).must_equal 10
+      expect(Vote.order_by_work.length).must_equal 10
       
     end
   end

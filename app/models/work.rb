@@ -2,7 +2,9 @@ class Work < ApplicationRecord
   has_many :votes
 
   def self.top_ten
-
+    
+    array_of_top_ten_works = []
+    Vote.tally_up_works
     # return Work.order("RANDOM()").limit(10)
     # find number of votes per work
     # sort works in descending order by vote 
