@@ -3,6 +3,7 @@ class HomepagesController < ApplicationController
   
   def index
     @works = Work.all
+    @media_spotlight = Work.media_spotlight
     @top_ten = Work.top_ten
     @movies = Work.all_movies
     @albums = Work.all_albums

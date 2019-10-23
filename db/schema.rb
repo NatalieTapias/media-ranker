@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_21_012649) do
+ActiveRecord::Schema.define(version: 2019_10_23_005207) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2019_10_21_012649) do
     t.string "creator"
     t.integer "publication_year"
     t.string "description"
+    t.integer "votes_count", default: 0
   end
 
   add_foreign_key "votes", "users"

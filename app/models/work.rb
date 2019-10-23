@@ -2,12 +2,7 @@ class Work < ApplicationRecord
   has_many :votes
 
   def self.top_ten
-    
-    array_of_top_ten_works = []
-    Vote.tally_up_works
-    # return Work.order("RANDOM()").limit(10)
-    # find number of votes per work
-    # sort works in descending order by vote 
+    Work.order(votes_count: :desc).limit(10)
   end
 
   def self.media_spotlight
@@ -15,16 +10,14 @@ class Work < ApplicationRecord
   end
 
   def self.all_albums
-    return Work.where(category: 'album')
+    return Work.where(category: 'album').order(votes_count: :desc).limit(10)
   end
 
   def self.all_movies
-    return Work.where(category: 'movie')
+    return Work.where(category: 'movie').order(votes_count: :desc).limit(10)
   end
 
   def self.all_books
-    return Work.where(category: 'book')
+    return Work.where(category: 'book').order(votes_count: :desc).limit(10)
   end
-  
-  
 end
