@@ -41,10 +41,4 @@ describe VotesController do
       }.must_change "Vote.count", 1
     end
   end
-
-  
-  # A guest user cannot vote if they have not logged in
-  # A logged-in user can vote for a work they haven't already voted for
-  # A logged-in user cannot vote for a work they have previously voted for
-
 end
