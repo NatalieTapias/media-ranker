@@ -6,8 +6,11 @@ class UsersController < ApplicationController
   end
   
   def show
-    user_id = session[:user_id] 
-    @user = User.find_by(id: user_id)
+    @user = User.find_by(id: params[:id])
+    if @user.nil?
+      flash[:failure]= "Cannot find user"
+      redirect_to root_path
+    end
   end
 
   def login_form

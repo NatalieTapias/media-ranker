@@ -11,7 +11,7 @@
     </tr>
   </thead>
   <tbody>
-<% if @user.votes.count >= 1 %>
+<% if @user.votes.count > 0 %>
     <% @user.votes.each do |vote| %>
       <tr>
         <td><%= link_to "#{ Work.find_by(id: vote.work_id).title }", work_path(vote.work) %></td>
