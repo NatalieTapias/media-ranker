@@ -25,6 +25,10 @@ describe Work do
 
       expect(top_ten.count).must_equal 0
     end
+
+    it "should handle ties .." do
+    # Ties in the number of votes?
+    end
   end
 
   describe "all_albums" do
