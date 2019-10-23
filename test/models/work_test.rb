@@ -15,6 +15,16 @@ describe Work do
       expect(Work.top_ten.first.votes.size).must_equal 2
       expect(Work.top_ten.first.title).must_equal "Favorite Book"
     end
+
+    it "should return an empty set if there are 0 works" do
+      Work.all.destroy_all
+
+      expect(Work.count).must_equal 0
+
+      top_ten = Work.top_ten
+
+      expect(top_ten.count).must_equal 0
+    end
   end
 
   describe "all_albums" do

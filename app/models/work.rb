@@ -1,5 +1,5 @@
 class Work < ApplicationRecord
-  has_many :votes
+  has_many :votes, dependent: :destroy
 
   def self.top_ten
     return Work.order(votes_count: :desc).limit(10)
