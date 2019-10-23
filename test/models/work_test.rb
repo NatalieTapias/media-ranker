@@ -8,11 +8,12 @@ describe Work do
       end
 
       expect(Work.count).must_be :>, 10
-      # expect(Work.top_ten.length).must_equal 10
+      expect(Work.top_ten.length).must_equal 10
     end
 
     it "should return items in vote_count, desc order " do
-      # check for correct order
+      expect(Work.top_ten.first.votes.size).must_equal 2
+      expect(Work.top_ten.first.title).must_equal "Favorite Book"
     end
   end
 

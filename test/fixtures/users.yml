@@ -1,15 +1,10 @@
 user_one:
-  id: 1
   username: natalie
 user_two:
-  id: 2
   username: tim
 user_three:
-  id: 3
   username: maria
 user_four:
-  id: 4
   username: arnold
 user_five:
-  id: 5
   username: harry

@@ -2,7 +2,7 @@ class Work < ApplicationRecord
   has_many :votes
 
   def self.top_ten
-    Work.order(votes_count: :desc).limit(10)
+    return Work.order(votes_count: :desc).limit(10)
   end
 
   def self.media_spotlight
