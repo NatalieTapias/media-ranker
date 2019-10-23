@@ -6,7 +6,7 @@ class Work < ApplicationRecord
   end
 
   def self.media_spotlight
-    return Work.first
+    return Work.order(votes_count: :desc).limit(1).first
   end
 
   def self.all_albums
